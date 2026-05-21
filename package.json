@@ -1,0 +1,39 @@
+{
+	"name": "incident-reporter",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --webpack",
+		"dev:turbo": "next dev --turbopack",
+		"build": "next build",
+		"start": "next start",
+		"lint": "eslint",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"deploy:firebase": "firebase deploy --only hosting"
+	},
+	"dependencies": {
+		"firebase": "^12.12.0",
+		"firebase-admin": "^13.8.0",
+		"lucide-react": "^1.8.0",
+		"next": "16.2.3",
+		"react": "19.2.4",
+		"react-dom": "19.2.4",
+		"react-markdown": "^10.1.0",
+		"remark-gfm": "^4.0.1"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4",
+		"@trivago/prettier-plugin-sort-imports": "^5.2.2",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"babel-plugin-react-compiler": "1.0.0",
+		"eslint": "^9",
+		"eslint-config-next": "16.2.3",
+		"prettier": "^3.5.3",
+		"prettier-plugin-tailwindcss": "^0.6.11",
+		"tailwindcss": "^4",
+		"typescript": "^5"
+	}
+}

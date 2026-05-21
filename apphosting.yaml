@@ -1,0 +1,44 @@
+# Settings for Backend (on Cloud Run).
+# See https://firebase.google.com/docs/app-hosting/configure#cloud-run
+runConfig:
+  minInstances: 0
+  # maxInstances: 100
+  # concurrency: 80
+  # cpu: 1
+  # memoryMiB: 512
+
+  # Environment variables and secrets.
+  # env:
+  # Configure environment variables.
+  # See https://firebase.google.com/docs/app-hosting/configure#user-defined-environment
+  # - variable: MESSAGE
+  #   value: Hello world!
+  #   availability:
+  #     - BUILD
+  #     - RUNTIME
+
+  # Grant access to secrets in Cloud Secret Manager.
+  # You can create secrets with the CLI command `firebase apphosting:secrets:set <secretName>`.
+  # See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
+  # - variable: MY_SECRET
+  #   secret: mySecretRef
+env:
+  - variable: INCIDENT_API_SECRET
+    secret: INCIDENT_API_SECRET
+    availability:
+      - RUNTIME
+  - variable: GEMINI_API_KEY
+    secret: GEMINI_API_KEY
+  - variable: BE_FIREBASE_SERVICE_ACCOUNT_KEY
+    secret: BE_FIREBASE_SERVICE_ACCOUNT_KEY
+  - variable: NEXT_PUBLIC_INCIDENT_API_TOKEN
+    value: b3e442ae44ed93bcd1582efb9936f60a1667d6e038e70f67
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: GEMINI_MODEL
+    value: gemini-2.5-flash
+  - variable: FIREBASE_ARTIFACT_APP_ID
+    value: everyday-mandarin
+  - variable: INCIDENT_API_CORS_ORIGIN
+    value: "https://incidentreporterpro.com,https://www.incidentreporterpro.com,https://pro-incident-reporter-v2-be--pro-incident-reporter.us-east4.hosted.app,http://localhost:3000"
